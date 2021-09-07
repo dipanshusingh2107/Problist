@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Problems</title>
+</head>
+<body>
+ 
+
+   
+    
+    <form action="/addprob" method="post">
+        <label for="link">Link of the prob</label>
+        <input type="text" name="link" id="problink">
+        <select name="probcat" id="probcat">
+            <% for(var i=0; i < category.length; i++) { %>
+                <option value= "<%= category[i].category %>" > <%= category[i].category %> </option>
+             <% } %>
+        </select>
+        <br>
+       <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
