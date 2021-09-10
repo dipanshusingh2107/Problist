@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -46,6 +47,14 @@ app.use('/' , addprob_route);
 app.use('/' , home_route);
 app.use('/' , login_route);
 app.use('/' , incre);
+
+
+
+require('dotenv').config()
+const URI = process.env.MONGODBURI;
+mongoose.connect(URI,
+{useNewUrlParser: true, useUnifiedTopology: true});
+
 
 const server = http.createServer(app);
 PORT = process.env.PORT | 3000
