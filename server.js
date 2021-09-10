@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const http = require('http');
-const session = require('express-session')
+const session = require('cookie-session');
 
 const passport = require('./config/strategies')
 const credentials = require('./models/credentials');
@@ -15,6 +15,8 @@ const login_route = require('./routes/login')
 const register_route = require('./routes/register')
 const incre = require('./routes/incre');
 
+
+require('dotenv').config()
 
 app.set('views',__dirname+'/views');
 app.set('view engine' , 'ejs');
@@ -50,7 +52,7 @@ app.use('/' , incre);
 
 
 
-require('dotenv').config()
+
 const URI = process.env.MONGODBURI;
 mongoose.connect(URI,
 {useNewUrlParser: true, useUnifiedTopology: true});
