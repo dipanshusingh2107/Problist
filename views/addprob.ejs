@@ -6,10 +6,15 @@
     <title>Add Problems</title>
 </head>
 <body>
- 
 
-   
-    
+    <h1>Categories Of Problem</h1>
+    <form action="/" method="post">
+        <!-- name is what goes to the server -->
+        <label for="catname" >New Catagory Name</label>
+        <input type="text" id="catname" name = "catname">
+        <input type="submit" value="Submit">
+    </form>
+
     <form action="/addprob" method="post">
         <label for="link">Link of the prob</label>
         <input type="text" name="link" id="problink">

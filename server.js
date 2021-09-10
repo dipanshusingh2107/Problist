@@ -12,12 +12,14 @@ const home_route = require('./routes/home');
 const addprob_route = require('./routes/addprob');
 const login_route = require('./routes/login')
 const register_route = require('./routes/register')
+const incre = require('./routes/incre');
 
 
 app.set('views',__dirname+'/views');
 app.set('view engine' , 'ejs');
 app.use(express.static('views'));
 app.use('/scripts',express.static('scripts'));
+app.use('/styles' ,express.static('styles'));
 
 //this is to parse the form data that is of type json 
 app.use(express.json());
@@ -43,6 +45,7 @@ app.use('/' , register_route);
 app.use('/' , addprob_route);
 app.use('/' , home_route);
 app.use('/' , login_route);
+app.use('/' , incre);
 
 const server = http.createServer(app);
 PORT = process.env.PORT | 3000
