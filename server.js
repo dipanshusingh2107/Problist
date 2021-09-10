@@ -59,7 +59,7 @@ mongoose.connect(URI,
 
 
 const server = http.createServer(app);
-PORT = process.env.PORT | 3000
-server.listen(PORT , ()=>{
+PORT = process.env.PORT || 3000
+server.listen(PORT,"0.0.0.0" , ()=>{
     console.log(`server listed on port ${PORT}`);
 });
