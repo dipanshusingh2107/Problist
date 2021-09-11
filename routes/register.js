@@ -13,7 +13,7 @@ router.post('/register' ,async (req , res)=>{
 
     salt = await bcrypt.genSalt(10);
     pass = await bcrypt.hash(req.body.password  ,salt);
-    cred = new Credentials({name:req.body.name , username:req.body.username,password: pass});
+    cred = new Credentials({name:req.body.name ,email: req.body.email,username:req.body.username,password: pass});
     cred.save((err,data)=>{
         if(err)
         {
