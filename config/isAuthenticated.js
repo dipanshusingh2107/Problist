@@ -1,11 +1,11 @@
-const allowUrl = ['/' , '/register'];
+const allowUrl = ['/register' ,'/forgotpass' , '/password-reset'];
 
 check = (requrl)=>{
 
     for(i = 0 ; i<allowUrl.length;i++)
     {
-        // if(requrl.startsWith(allowUrl[i]))
-        if(requrl == allowUrl[i])
+        if(requrl.startsWith(allowUrl[i]) || requrl == '/')
+        // if(requrl == allowUrl[i])
         return true;
     }
     return false

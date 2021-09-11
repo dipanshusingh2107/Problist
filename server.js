@@ -8,7 +8,7 @@ const passport = require('./config/strategies')
 const credentials = require('./models/credentials');
 const isAuthenticated = require('./config/isAuthenticated');
 
-
+const forgotpass_route = require('./routes/forgotpass')
 const home_route = require('./routes/home');
 const addprob_route = require('./routes/addprob');
 const login_route = require('./routes/login')
@@ -49,6 +49,7 @@ app.use('/' , addprob_route);
 app.use('/' , home_route);
 app.use('/' , login_route);
 app.use('/' , incre);
+app.use('/password-reset/:token' , forgotpass_route);
 
 
 
