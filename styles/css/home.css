@@ -1,0 +1,15 @@
+.heading1 {
+  display: inline-flex;
+  cursor: pointer; }
+
+.heading-div {
+  display: none; }
+
+.arrow-right-1 {
+  background: url("../icons/right-arrow.png");
+  height: 1.2rem;
+  width: 1.2rem;
+  display: block;
+  background-size: contain;
+  transform: translateY(0.8rem);
+  margin-left: 0.5rem; }

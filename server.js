@@ -23,6 +23,7 @@ app.set('view engine' , 'ejs');
 app.use(express.static('views'));
 app.use('/scripts',express.static('scripts'));
 app.use('/styles' ,express.static('styles'));
+app.use('/styles/icons' , express.static('styles/icons'));
 
 //this is to parse the form data that is of type json 
 app.use(express.json());
